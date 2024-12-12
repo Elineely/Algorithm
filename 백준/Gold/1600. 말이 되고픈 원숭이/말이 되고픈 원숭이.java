@@ -1,9 +1,5 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Comparator;
-import java.util.PriorityQueue;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 class Monkey{
 	int y;
@@ -91,7 +87,7 @@ public class Main {
 		W = Integer.parseInt(st.nextToken());
 		H = Integer.parseInt(st.nextToken());
 		
-		//맵 입력 받음
+		//맵 입력
 		map = new int[H][W];
 		for (int i = 0; i < H; ++i) {
 			st = new StringTokenizer(br.readLine(), " ");
