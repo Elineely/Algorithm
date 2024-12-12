@@ -79,22 +79,14 @@ class Main
 
 		while(true){
 			//머리 이동
-			// System.out.println("time : " + time + " , dIndex : " + dIndex );
-
-			// System.out.println("before -  head  : " + curr.head.y + " , " + curr.head.x + "  dIndex : " +  dIndex );
 
 			curr.head.y += dy[dIndex];
 			curr.head.x += dx[dIndex];
-			
-			// System.out.println("after - head  : " + curr.head.y + " , " + curr.head.x + "  dIndex : " +  dIndex );
-
-			// printMap();
 
 			++time;
 
 			if (curr.head.y < 1 || curr.head.x < 1 || curr.head.y > N || curr.head.x > N ||
 			   map[curr.head.y][curr.head.x] == 2){
-				// printMap();
 				break;
 			}//게임 종료 조건
 		
@@ -102,25 +94,17 @@ class Main
 			tails.add(new Point(curr.head.y, curr.head.x));
 
 			if(map[curr.head.y][curr.head.x] == 0){
-				// System.out.println(curr.tail.y + "   " + curr.tail.x);
 				Point end = tails.poll();
 				map[end.y][end.x] = 0;
-				// map[curr.tail.y][curr.tail.x] = 0;
-				// curr.tail.y += dy[dIndex];
-				// curr.tail.x += dx[dIndex];
+				
 			}//해당 공간에 아무것도 없다면(사과를 못먹었다면) 꼬리 이동
-			// else {
-			// 	curr.length += 1;
-			// }//사과를 먹은 경우 몸 길이 늘리기. //몸길이는 중요하지 않다.
-		
+			
 			map[curr.head.y][curr.head.x] = 2; //내 몸의 자리 기억
 
 
 			//방향전환
 			if(!command.isEmpty()){
 				Order next = command.peek();
-				
-				// System.out.println("curr : " + time + "  next : " +  next.time);
 				
 				if (time == next.time){
 					command.poll();
@@ -130,12 +114,7 @@ class Main
 				}
 			}
 
-
-			// System.out.println(time);
-			// printMap();
 		}
-
-		// printMap();
 
 		System.out.println(time);
 	}
