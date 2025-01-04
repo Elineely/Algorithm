@@ -55,27 +55,9 @@ class Solution {
             visited[nc] = true;
             }
         }
-        q.clear();
         
-        q.add(v2);
-        visited[v2] = true;
-        int size2 = 0;
-        while(!q.isEmpty()){
-            int curr = q.poll();
-            ++size2;
-            for(int i = 0; i < tree[curr].size(); ++i){
-                int nc = tree[curr].get(i);
-                if (curr == v2 && nc == v1)
-                    continue; //없는 엣지인셈 침
-                if (visited[nc] == true)
-                    continue; //이미 방문한 노드
-               q.add(nc);
-            visited[nc] = true;
-            }
-        }//end of while
-        
-        if(Math.abs(size2- size1) < minDiff)
-            minDiff = Math.abs(size2- size1);
+        if(Math.abs((N - size1) - size1) < minDiff)
+            minDiff = Math.abs((N - size1) - size1);
     }//end of solution method
     
 }//end of class
