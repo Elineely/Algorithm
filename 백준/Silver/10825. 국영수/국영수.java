@@ -48,10 +48,10 @@ public class Main {
 
 		while(!pq.isEmpty()){
 			String name = pq.poll().name;
-			System.out.println(name);
+			// System.out.println(name);
 			sb.append(name).append('\n');
 		}
-		sb.toString();
+		System.out.print(sb.toString());
 	}//end of main
 
 }
