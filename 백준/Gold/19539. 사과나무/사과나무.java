@@ -1,4 +1,6 @@
 import java.util.*;
+
+import java.io.*;
  
 public class Main { 
     static Scanner sc = new Scanner(System.in);
@@ -20,20 +22,12 @@ public class Main {
         if(sum == 0){
             System.out.println("YES");
         }
-        else if(sum % 3 > 0 || count1 > count2){
-                System.out.println("NO");
-        }
-        else {
+        else if(sum % 3 == 0 && count2 >= count1){
             System.out.println("YES");
         }
-
-        // {}
-        // // else if(sum % 3 == 0 && count2 > count1){
-        //     System.out.println("YES");
-        // }
-        // else{
-        //     System.out.println("NO");
-        // }
+        else{
+            System.out.println("NO");
+        }
 
     } //end of main method
 
