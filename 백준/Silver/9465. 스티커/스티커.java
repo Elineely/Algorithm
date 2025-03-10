@@ -22,16 +22,16 @@ public class Main {
             dp[1][0] = arr[1][0];
 
             for(int i = 1; i < N; ++i){
-                for(int k = 0; k < 2; ++k){
-                    if(k == 0){
+                //for(int k = 0; k < 2; ++k){
+                    // if(k == 0){
                         dp[0][i] = Math.max(dp[0][i - 1], dp[1][i - 1] + arr[0][i]); 
-                    }
-                    else {
+                    // }
+                    // else {
                         // dp[1][i] = Math.max(dp[0][i], Math.max(dp[0][i - 1] + arr[1][i], dp[1][i - 1])); 
                         dp[1][i] = Math.max(dp[0][i - 1] + arr[1][i], dp[1][i - 1]); 
-                    }
+                    // }
                     // System.out.println(dp[k][i]);
-                }
+               // }
             }
 
             System.out.println(Math.max(dp[0][N - 1], dp[1][N - 1]));
